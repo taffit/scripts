@@ -17,3 +17,7 @@ The main features are mostly the following:
 - <kbd>CAPSLock</kbd> + <kbd>r</kbd> &rarr; <kbd>F5</kbd> (refresh / rerun in so many applications)
 
 I commented the script mostly so it should become clear what each section does. Also I normally mention the author or the source where I got some snippet from. If I forgot someone, don't hesitate to contact me (just not for some stupid stuff: "Hey, I found the Escap-key on the keyboard before you! Gimme credit!" Yeah, right...).
+
+
+The `ahkstdlib`-folder contains [Tuncay's standard library collection](https://autohotkey.com/board/topic/50834-ahk-standard-library-collection-2010-sep-gui-libs-100/page-1#entry317658) from 2010, mainly for backup purpose and / or inspiration.
+
