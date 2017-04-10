@@ -1,10 +1,6 @@
 ; The following found here: http://lifehacker.com/5277383/use-caps-lock-for-hand+friendly-text-navigation
 ; Modified for being more VIM friendly.
-;
-; AutoHotkey Version: 1.x
-; Language:       English
-; Platform:       Win9x/NT
-; Written by Philipp Otto, Germany
+
 ;
 ; Script Function:
 ;	Template script (you can customize this template by editing "ShellNew\Template.ahk" in your Windows folder)
@@ -18,134 +14,154 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, AlwaysOff
 CapsLock::Send {Esc}
 CapsLock & k::
-       if getkeystate("alt") = 0
-               Send,{Up}
-       else
-               Send,+{Up}
+    if getkeystate("alt") = 0
+        Send,{Up}
+    else
+        Send,+{Up}
 return
 
 CapsLock & l::
-       if getkeystate("alt") = 0
-               Send,{Right}
-       else
-               Send,+{Right}
+    if getkeystate("alt") = 0
+        Send,{Right}
+    else
+        Send,+{Right}
 return
 
 CapsLock & h::
-       if getkeystate("alt") = 0
-               Send,{Left}
-       else
-               Send,+{Left}
+    if getkeystate("alt") = 0
+        Send,{Left}
+    else
+        Send,+{Left}
 return
 
 CapsLock & j::
-       if getkeystate("alt") = 0
-               Send,{Down}
-       else
-               Send,+{Down}
+    if getkeystate("alt") = 0
+        Send,{Down}
+    else
+        Send,+{Down}
 return
 
 ;CapsLock & ,::
-;       if getkeystate("alt") = 0
-;               Send,^{Down}
-;       else
-;               Send,+^{Down}
+;    if getkeystate("alt") = 0
+;        Send,^{Down}
+;    else
+;        Send,+^{Down}
 ;return
 ;
 ;CapsLock & 8::
-;       if getkeystate("alt") = 0
-;               Send,^{Up}
-;       else
-;               Send,+^{Up}
+;    if getkeystate("alt") = 0
+;        Send,^{Up}
+;    else
+;        Send,+^{Up}
 ;return
 
 CapsLock & 0::
-       if getkeystate("alt") = 0
-               Send,{Home}
-       else
-               Send,+{Home}
+    if getkeystate("alt") = 0
+        Send,{Home}
+    else
+        Send,+{Home}
+return
+
+CapsLock & y::
+    if getkeystate("shift") = 0
+        Send,^{Home}
+    else
+        Send,+^{Home}
+return
+
+CapsLock & u::
+    if getkeystate("shift") = 0
+        Send,^{Left}
+    else
+        Send,+^{Left}
+return
+
+CapsLock & i::
+    if getkeystate("shift") = 0
+        Send,^{Right}
+    else
+        Send,+^{Right}
+return
+
+CapsLock & o::
+    if getkeystate("shift") = 0
+        Send,^{End}
+    else
+        Send,+^{End}
 return
 
 CapsLock & 4::
-       if getkeystate("alt") = 0
-               Send,{End}
-       else
-               Send,+{End}
+    if getkeystate("alt") = 0
+        Send,{End}
+    else
+        Send,+{End}
 return
 
 CapsLock & n::
-       if getkeystate("alt") = 0
-               Send,^{Left}
-       else
-               Send,+^{Left}
+    if getkeystate("alt") = 0
+        Send,^{Left}
+    else
+        Send,+^{Left}
 return
 
 CapsLock & m::
-       if getkeystate("alt") = 0
-               Send,^{Right}
-       else
-               Send,+^{Right}
-return
-
-Capslock & i::
-       Send,{PgUp}
-return
-
-Capslock & u::
-       Send,{PgDn}
+    if getkeystate("alt") = 0
+        Send,^{Right}
+    else
+        Send,+^{Right}
 return
 
 CapsLock & Break::
-       Send,{Media_Play_Pause}
+    Send,{Media_Play_Pause}
 return
 
 CapsLock & ScrollLock::
-       Send,{Media_Stop}
+    Send,{Media_Stop}
 return
 
 CapsLock & PrintScreen::
-       Send,{Volume_Mute}
+    Send,{Volume_Mute}
 return
 
 CapsLock & -::
-       Send {Volume_Down 1}
+    Send {Volume_Down 1}
 return
 
 CapsLock & =::
-       Send {Volume_Up 1}
+    Send {Volume_Up 1}
 return
 
 CapsLock & [::
-       Send {Media_Prev}
+    Send {Media_Prev}
 return
 
 CapsLock & ]::
-       Send {Media_Next}
+    Send {Media_Next}
 return
 
 ;LCtrl & ,::ShiftAltTab
 ;LCtrl & .::AltTab
 
-RAlt & a:: 
+RAlt & a::
     GetKeyState, state, Shift
     if state = D
-        SendInput {ASC 142}
+       SendInput {ASC 142}
     Else
-        Send,{ASC 132}
+       Send,{ASC 132}
 Return
-RAlt & o:: 
+RAlt & o::
     GetKeyState, state, Shift
     if state = D
-        SendInput {ASC 153}
+       SendInput {ASC 153}
     Else
-        Send,{ASC 148}
+       Send,{ASC 148}
 Return
-RAlt & u:: 
+RAlt & u::
     GetKeyState, state, Shift
     if state = D
-        SendInput {ASC 154}
+       SendInput {ASC 154}
     Else
-        Send,{ASC 129}
+       Send,{ASC 129}
 Return
 
 ;CapsLock & a::Send, {ASC 142}
@@ -153,17 +169,17 @@ Return
 ;CapsLock & u::Send, {ASC 154}
 
 ; For using e.g. CapsLock + Alt + k
-;Capslock & k:: 
+;Capslock & k::
 ;GetKeyState, state, Alt
 ;if state = D
 ;SendInput !{Up}
-;Return 
+;Return
 
-CapsLock & e::                                  ;has to be changed (depending on the keyboard-layout)
-        if getkeystate("alt") = 0
-                Send,^{Right}
-        else
-                Send,+^{Right}
+CapsLock & e::                      ;has to be changed (depending on the keyboard-layout)
+     if getkeystate("alt") = 0
+        Send,^{Right}
+     else
+        Send,+^{Right}
 return
 
 CapsLock & BS::Send,{Del}
@@ -189,42 +205,42 @@ NumpadDot::Send {,}
 ; Left mouse + right mouse = volume up, right mouse + left mouse = volume down
 ;~LButton & RButton::
 ;{
-  ;Loop
-  ;{
-    ;GetKeyState, state, LButton 
-    ;if state = U
+    ;Loop
     ;{
-      ;break
+        ;GetKeyState, state, LButton
+        ;if state = U
+        ;{
+            ;break
+        ;}
+        ;Sleep, 500
+        ;Send {Volume_Up 1}
     ;}
-    ;Sleep, 500
-    ;Send {Volume_Up 1}
-  ;}
 ;
-  ;Return
+    ;Return
 ;}
 
 ;~RButton & LButton::
 ;{
-  ;Loop
-  ;{
-    ;GetKeyState, state, RButton 
-    ;if state = U
+    ;Loop
     ;{
-      ;break
+        ;GetKeyState, state, RButton
+        ;if state = U
+        ;{
+            ;break
+        ;}
+        ;Sleep, 500
+        ;Send {Volume_Down 1}
     ;}
-    ;Sleep, 500
-    ;Send {Volume_Down 1}
-  ;}
 ;
-  ;Return
+    ;Return
 ;}
 
 ; Paste in command prompt
 ; ; AutoHotkey Version: 1.x ; Language: English ; Author: Lowell Heddings | geek@howtogeek.com
 ; ; Script Function: ; enable paste in the Windows command prompt ; #NoTrayIcon
 #IfWinActive ahk_class ConsoleWindowClass ^v::
-  SendInput {Raw}%clipboard%
-  return
+    SendInput {Raw}%clipboard%
+    return
 #IfWinActive
 
 ;Hold ALT down on clicking, simulates a double left click
@@ -232,30 +248,30 @@ NumpadDot::Send {,}
 
 ;Windows + V to paste plain text.
 #v::
-  ClipSaved := ClipboardAll
-  Clipboard = %Clipboard%
-  SendInput, ^v
-  Sleep, 250
-  Clipboard := ClipSaved
+    ClipSaved := ClipboardAll
+    Clipboard = %Clipboard%
+    SendInput, ^v
+    Sleep, 250
+    Clipboard := ClipSaved
 return
 
 ;Windows + Shift + S to change sound output. Useful when you want to change from headphones to speakers.
 #+s::
-  toggle:=!toggle ; toggles up and down states
-  Run, mmsys.cpl
-  WinWait,Sound ;Change "Sound" to the name of the window in your local language
-  if toggle
-    ControlSend,SysListView321,{Down 1} ; This number selects the matching audio device in the list, change it accordingly
-  Else
-    ControlSend,SysListView321,{Down 1} ; This number selects the matching audio device in the list, change it accordingly
-  ControlClick,&Set Als Standard ;Default ; Change "&Set Default" to the name of the button in your local language
-  ControlClick,OK
+    toggle:=!toggle ; toggles up and down states
+    Run, mmsys.cpl
+    WinWait,Sound ;Change "Sound" to the name of the window in your local language
+    if toggle
+        ControlSend,SysListView321,{Down 1} ; This number selects the matching audio device in the list, change it accordingly
+    Else
+        ControlSend,SysListView321,{Down 1} ; This number selects the matching audio device in the list, change it accordingly
+    ControlClick,&Set Als Standard ;Default ; Change "&Set Default" to the name of the button in your local language
+    ControlClick,OK
 return
 
 ;Windows + Shift + G to insert an uppercase GUID
 #+g::
-  TypeLib := ComObjCreate("Scriptlet.TypeLib")
-  NewGUID := TypeLib.Guid
-  StringUpper NewGUID, NewGUID
-  SendInput, {Raw}%NewGUID%
+    TypeLib := ComObjCreate("Scriptlet.TypeLib")
+    NewGUID := TypeLib.Guid
+    StringUpper NewGUID, NewGUID
+    SendInput, {Raw}%NewGUID%
 return
