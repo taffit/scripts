@@ -14,28 +14,28 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, AlwaysOff
 CapsLock::Send {Esc}
 CapsLock & k::
-    if getkeystate("alt") = 0
+    if getkeystate("shift") = 0
         Send,{Up}
     else
         Send,+{Up}
 return
 
 CapsLock & l::
-    if getkeystate("alt") = 0
+    if getkeystate("shift") = 0
         Send,{Right}
     else
         Send,+{Right}
 return
 
 CapsLock & h::
-    if getkeystate("alt") = 0
+    if getkeystate("shift") = 0
         Send,{Left}
     else
         Send,+{Left}
 return
 
 CapsLock & j::
-    if getkeystate("alt") = 0
+    if getkeystate("shift") = 0
         Send,{Down}
     else
         Send,+{Down}
@@ -55,18 +55,11 @@ return
 ;        Send,+^{Up}
 ;return
 
-CapsLock & 0::
-    if getkeystate("alt") = 0
+CapsLock & y::
+    if getkeystate("shift") = 0
         Send,{Home}
     else
         Send,+{Home}
-return
-
-CapsLock & y::
-    if getkeystate("shift") = 0
-        Send,^{Home}
-    else
-        Send,+^{Home}
 return
 
 CapsLock & u::
@@ -85,30 +78,9 @@ return
 
 CapsLock & o::
     if getkeystate("shift") = 0
-        Send,^{End}
-    else
-        Send,+^{End}
-return
-
-CapsLock & 4::
-    if getkeystate("alt") = 0
         Send,{End}
     else
         Send,+{End}
-return
-
-CapsLock & n::
-    if getkeystate("alt") = 0
-        Send,^{Left}
-    else
-        Send,+^{Left}
-return
-
-CapsLock & m::
-    if getkeystate("alt") = 0
-        Send,^{Right}
-    else
-        Send,+^{Right}
 return
 
 CapsLock & Break::
@@ -175,14 +147,8 @@ Return
 ;SendInput !{Up}
 ;Return
 
-CapsLock & e::                      ;has to be changed (depending on the keyboard-layout)
-     if getkeystate("alt") = 0
-        Send,^{Right}
-     else
-        Send,+^{Right}
-return
-
 CapsLock & BS::Send,{Del}
+CapsLock & a::Send ^a
 CapsLock & x::Send ^x
 CapsLock & c::Send ^c
 CapsLock & v::Send ^v
@@ -193,8 +159,8 @@ CapsLock & r::Send {F5}
 CapsLock & Space::Send,{Space}
 
 ;*Capslock::SetCapsLockState, AlwaysOff
-;Remapping Capslock to ESC. Use Shift+Capslock to activate Capslock
-+CapsLock::CapsLock
+;Remapping Capslock to ESC. Use AltGr+Capslock to activate Capslock
+<^>!CapsLock::CapsLock
 
 ;Mapping the dot on the NumPad to a German ,
 NumpadDot::Send {,}
