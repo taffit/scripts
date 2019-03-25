@@ -8,10 +8,13 @@ This script, until then, prooved to be extremely useful to me and still is, e.g.
 The main features are mostly the following:
 
 - Map <kbd>CAPSLock</kbd> to <kbd>Esc</kbd>
-- <kbd>Shift+CAPSLock</kbd> &rarr; <kbd>CAPSLock</kbd> on or off
+- <kbd>AltGr+CAPSLock</kbd> &rarr; <kbd>CAPSLock</kbd> on or off
 - <kbd>CAPSLock</kbd> + <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd>, <kbd>l</kbd> &rarr; vim-like cursor keys in every application
+- <kbd>CAPSLock</kbd> + <kbd>y</kbd>, <kbd>o</kbd> &rarr; Pos1 / End aka begin and end of line
+- <kbd>CAPSLock</kbd> + <kbd>u</kbd>, <kbd>i</kbd> &rarr; <kbd>Ctrl</kbd> + <kbd>left</kbd> / <kbd>right</kbd> aka one word to the left or right. This in combination with a pressed <kbd>Shift</kbd>-key you can quickly mark words
 - <kbd>CAPSLock</kbd> + <kbd>Backspace</kbd> &rarr; <kbd>Del</kbd>
 - <kbd>Win+v</kbd> &rarr; paste plain text
+- <kbd>Win+h</kbd> &rarr; copy the colour of the pixel under the cursor to the clipboard
 - <kbd>CAPSlock</kbd> + <kbd>Pause</kbd> &rarr; Start / stop media player. Other media player functions include stopping, volume control, previous / next track.
 - Cut, copy and paste shortcuts also set on <kbd>CAPSLock</kbd> + <kbd>x</kbd>, <kbd>c</kbd> and <kbd>v</kbd>
 - <kbd>CAPSLock</kbd> + <kbd>r</kbd> &rarr; <kbd>F5</kbd> (refresh / rerun in so many applications)

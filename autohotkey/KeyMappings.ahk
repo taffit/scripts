@@ -152,6 +152,7 @@ CapsLock & a::Send ^a
 CapsLock & x::Send ^x
 CapsLock & c::Send ^c
 CapsLock & v::Send ^v
+CapsLock & w::Send ^w
 ;Useful for refreshing or executing script in MS SQL Manager
 CapsLock & r::Send {F5}
 
@@ -220,6 +221,16 @@ NumpadDot::Send {,}
     Sleep, 250
     Clipboard := ClipSaved
 return
+
+;Windows + H to copy the colour of the pixel under the cursor to the clipboard
+;Source: https://twitter.com/nickjanetakis/status/1108825825116332032
+#h::
+    MouseGetPos, MouseX, MouseY
+    PixelGetColor, color, %MouseX%, %MouseY%
+    StringLower, color, color
+    Clipboard := SubStr(color, 3)
+return
+
 
 ;Windows + Shift + S to change sound output. Useful when you want to change from headphones to speakers.
 #+s::
