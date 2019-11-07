@@ -111,6 +111,10 @@ CapsLock & ]::
     Send {Media_Next}
 return
 
+CapsLock & Tab::
+    Send, ^!{Tab}
+return
+
 ;LCtrl & ,::ShiftAltTab
 ;LCtrl & .::AltTab
 
