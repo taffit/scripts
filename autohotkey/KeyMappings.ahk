@@ -231,6 +231,17 @@ NumpadDot::Send("{,}")
   return
 }
 
+; Windows+Shift+v to TYPE contents of clipboard (if pasting is not possible)
+#+v::
+{
+  ClipSaved := ClipboardAll()
+  A_Clipboard := A_Clipboard
+  Send("{Raw}" . A_Clipboard)
+  Sleep(250)
+  A_Clipboard := ClipSaved
+  return
+}
+
 ; Windows + H to copy the colour of the pixel under the cursor to the clipboard
 ; Source: https://twitter.com/nickjanetakis/status/1108825825116332032
 #h::
